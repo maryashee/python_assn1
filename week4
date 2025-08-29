@@ -1,0 +1,9 @@
+filename= input("enter the file name you wish to read")
+try:
+    with open(filename, 'r') as myfile:
+        data= myfile.read()
+        with open('output.txt', 'w') as mynewfile:
+            mynewfile.write(data + "\n\n This is a modified version")
+    print(f"success in modifying {filename} and creating a modified output.txt")
+except FileNotFoundError:
+    print("file wasn't found" )
