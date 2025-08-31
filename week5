@@ -1,0 +1,48 @@
+class Smartphone:
+    def __init__(self, brand, model, battery):
+        self.brand = brand
+        self.model = model
+        self.__battery = battery  
+
+    def call(self, number):
+        return f"{self.brand} {self.model} is calling {number}..."
+
+    def battery_status(self):
+        return f"Battery: {self.__battery}%"
+
+    def charge(self, amount):
+        self.__battery = min(100, self.__battery + amount)
+        return f"Charging... Battery is now {self.__battery}%"
+
+class SmartphonePro(Smartphone):
+    def __init__(self, brand, model, battery, camera_quality):
+        super().__init__(brand, model, battery) 
+        self.camera_quality = camera_quality
+
+    def call(self, number):
+        return f"Video calling {number} in HD using {self.brand} {self.model} 📱"
+
+    def take_photo(self):
+        return f"Taking a {self.camera_quality} photo 📸"
+
+
+phone1 = Smartphone("Samsung", "Galaxy S22", 50)
+phone2 = SmartphonePro("Apple", "iPhone 15 Pro", 80, "4K")
+
+print(phone1.call("0712345678"))
+print(phone1.battery_status())
+print(phone1.charge(30))
+
+print(phone2.call("0798765432"))  
+print(phone2.take_photo())
+#activity 2
+
+class Car:
+    def move(self):
+        return "Driving 🚗"
+
+class Plane:
+    def move(self):
+        return 
+
+
